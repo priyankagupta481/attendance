@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        figure,
+        blockquote,
+        dl,
+        dd {
+            margin: 50px;
+            padding: 100px;
+        }
+
+
+        .logo {
+            position: absolute;
+            height: 150px;
+            top: 10px;
+            left: 10px;
+        }
+
+
+        a.btn {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FC7E3c;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        a.btn:hover {
+            background-color: #bd2130;
+        }
+
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+            border: 2px solid #0a0a0a;
+            border-radius: 5px;
+        }
+
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: black;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        .dropdown {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .dropbtn {
+            width: 100%;
+            padding: 10px;
+            border: 5px solid #ccc;
+            border-radius: 5px;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        input:hover {
+            border-color: #faccb3;
+        }
+
+        select:hover{
+            border-color: #faccb3;
+        }
+
+        option:hover{
+            border-color: #faccb3;
+        }
+
+        button[type="submit"] {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #003f69;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 3%;
+
+        }
+
+
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+
+        a.btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FC7E3c;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        a.btn:hover {
+            background-color: #bd2130;
+        }
+    </style>
+</head>
+
+<body>
+    {% load static %}
+
+    <a href="{% url 'firstpage' %}">
+        <img src="{% static 'img/orizzonte.jpg' %}" alt="Logo" class="logo">
+    </a>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="dropdown">
+
+            <label for="option">Option:</label>
+            <select id="statusSelect" class="dropbtn" name="option">
+                <option value="offline">Offline</option>
+                <option value="online">Online</option>
+            </select>
+        </div>
+
+        <br>
+        <label for="employee_id">Employee ID:</label>
+        <input type="text" id="employee_id" name="employee_id">
+        <br>
+
+        <label for="time_in">Time In:</label>
+        <input type="time" id="time_in" name="time_in">
+        <br>
+
+        <label for="time_out">Time Out:</label>
+        <input type="time" id="time_out" name="time_out">
+        <br>
+        <button type="submit">Submit</button>
+
+        {% if messages %}
+        {% for message in messages %}
+        <div id="popupMessage" style="display: none;">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+
+        <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+
+
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var popupMessage = document.getElementById("popupMessage");
+            if (popupMessage) {
+                alert(popupMessage.textContent);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=3, width=device-width" />
+
+    {% load static %}
+
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        figure,
+        blockquote,
+        dl,
+        dd {
+            margin: 0;
+            padding: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .desktop-1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 25px;
+
+
+            margin: 0 auto;
+        }
+
+        .oriizonte-1-icon {
+            width: 300px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .horizontal-container {
+            display: flex;
+
+        }
+
+
+        .frame-parent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rectangle-parent {
+            padding: 50px 30px;
+
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            margin-bottom: 20px;
+        }
+
+        .welcome-to-orizzonte {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .vector-parent,
+        .vector-group {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #FC7E3c;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .vector-parent:hover,
+        .vector-group:hover {
+            background-color: #cc7300;
+        }
+
+
+        .container-screenshot {
+            height: 20px;
+
+            margin-bottom: 20px;
+            padding: 50px;
+
+
+
+
+        }
+
+        .desk1 {
+            height: 500px;
+
+            text-align: right;
+            border-radius: 5px;
+            margin-top: -20px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="desktop-1">
+        <div class="horizontal-container">
+            <span>
+                {% load static %}
+                <a href="{% url 'firstpage' %}">
+                    <img class="oriizonte-1-icon" loading="lazy" src="{% static 'img/orizzonte.jpg' %}" alt="Logo"
+                        class="logo">
+                </a>
+                <section class="desktop-1-inner">
+                    <div class="frame-parent">
+                        <div class="rectangle-parent">
+                            <div class="frame-child"></div>
+                            <div class="o-c-s-initiated-message">
+                                <div class="welcome-to-orizzonte">
+                                    <b>
+                                        <h3>Welcome to Orizzonte Consultancy Services...</h3>
+                                    </b><br>
+                                    <br><br><i>
+                                        <h5>"Orizzonte Consultancy Services is initiated with the sole dream of
+                                            fulfilling the aspirations of global aspirants."<br>
+                                    </i></h5>
+                                    <br>
+                                </div>
+                                <div class="signin-button">
+                                    <div class="orizzonte-consultancy-services">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="site-header">
+                                <br>
+                                <div class="frame-group">
+                                    <a style="text-decoration: none;" href="login/">
+                                        <button class="vector-parent">
+                                            <div class="login">Login</div>
+                                        </button>
+                                    </a>
+                                    <a style="text-decoration: none;" href="signup/">
+                                        <button class="vector-group">
+                                            <div class="sign-in">Sign Up</div>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </span>
+            <span>
+                <section class="desktop-1-inner">
+                    <div class="container-screenshot">
+                        {% load static %}
+
+                        <img class="desk1" loading="lazy" alt="" src="{% static 'img/desk1.png' %}" />
+                    </div>
+                </section>
+            </span>
+
+        </div>
+    </div>
+</body>
+
+</html>

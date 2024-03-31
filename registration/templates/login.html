@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Page</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: -8px -5px;
+
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            background-repeat: no-repeat;
+
+        }
+
+        .logo {
+            position: absolute;
+            height: 150px;
+            top: 10px;
+            left: 10px;
+        }
+
+        .logimg {
+
+            position: absolute;
+            height: 500px;
+            width: 500px;
+            top: 120px;
+            right: 120px;
+
+
+        }
+
+        .background {
+            height: 100%;
+            width: 100%;
+
+        }
+
+        .background .shape {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+
+        form {
+            height: 425px;
+            width: 450px;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 60%;
+            left: 25%;
+            bottom: 10%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 20px;
+        }
+
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: black;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        form h3 {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 500;
+           
+        }
+
+        input {
+            display: block;
+            height: 40px;
+            width: 100%;
+
+            border-radius: 0px;
+            padding: 0px;
+
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 1%;
+            margin-top: 2%;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #fc7e3c;
+            color: #ffffff;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input:hover {
+            border-color: #faccb3;
+        }
+    </style>
+</head>
+
+<body>
+    {% load static %}
+    <a href="{% url 'firstpage' %}">
+        <img src="{% static 'img/orizzonte.jpg' %}" alt="Logo" class="logo">
+    </a>
+    <img class="logimg" loading="lazy" alt="" src="{% static 'img/login.jpeg' %}" />
+    <form action="" method="post" >
+        <h3>Login Here</h3>
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter Username" id="username" name="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="pass">
+
+        <button type="submit">Log In</button>
+
+        <a href="{% url 'signup' %}">Create an account</a>
+    </form>
+    </div>
+</body>
+
+</html>
