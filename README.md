@@ -37,6 +37,12 @@ venv\Scripts\activate # On Windows
 4. Install dependencies:
 pip install -r requirements.txt
 
+## Works
+
+Visit the homepage to access the registration functionality.
+Sign up or log in using valid credentials.
+Fill out the registration form with the required details.
+Submit the form to mark your attendance.
 
 ## Usage
 
@@ -47,8 +53,25 @@ python manage.py runserver
 
 3. Sign up or log in to access other functionalities like marking attendance.
 
-## Contributing
+## Dependencies
+Django
+Python
+Other dependencies listed in requirements.txt
 
-Contributions are welcome! Feel free to submit pull requests or report any issues.
+## File Structure
+admin.py: Contains Django admin configurations for the Registration model.
+forms.py: Defines forms, including the RegistrationForm used in the project.
+models.py: Contains the Registration model definition.
+views.py: Defines views, including registration_page and related functions.
+urls.py: Contains URL patterns for routing within the app.
+
+
+## Contributing
+Fork the repository.
+Create a new branch (git checkout -b feature/fooBar).
+Commit your changes (git commit -am 'Add some fooBar').
+Push to the branch (git push origin feature/fooBar).
+Create a new Pull Request.
+
 
 
