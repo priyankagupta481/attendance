@@ -29,9 +29,9 @@ cd registration
 
 
 3. Create and activate a virtual environment:
-##### python -m venv venv
-##### source venv/bin/activate # On Unix/Mac
-##### venv\Scripts\activate # On Windows
+##### &emsp; python -m venv venv
+##### &emsp; source venv/bin/activate # On Unix/Mac
+##### &emsp; venv\Scripts\activate # On Windows
 
 
 4. Install dependencies:
